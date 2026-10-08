@@ -48,7 +48,7 @@ export default function SmoothScroll() {
 
       e.preventDefault();
       history.replaceState(null, "", url.hash);
-      lenis.scrollTo(el as HTMLElement, { offset: -40 });
+      lenis.scrollTo(el as HTMLElement, { offset: -40, duration: 0.8 });
     };
 
     document.addEventListener("click", onAnchor);

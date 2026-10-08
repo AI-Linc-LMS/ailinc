@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { motion } from "motion/react";
 import { useState } from "react";
 import clsx from "clsx";
@@ -12,6 +13,7 @@ import { nav } from "@/lib/content";
  */
 export default function Nav() {
   const [open, setOpen] = useState(false);
+  const onHome = usePathname() === "/";
 
   return (
     <>
@@ -19,15 +21,15 @@ export default function Nav() {
         <nav className="flex items-center gap-2 rounded-full bg-ink-2/70 px-4 py-2 ring-1 ring-brand-soft/15 backdrop-blur-xl sm:gap-6 sm:px-5">
           <ul className="hidden items-center gap-6 md:flex">
             {nav.map((item) => (
-              <NavLink key={item.href} {...item} />
+              <NavLink key={item.href} {...item} onHome={onHome} />
             ))}
             <li>
-              <a
-                href="#contact"
+              <Link
+                href="/#contact"
                 className="rounded-full bg-paper px-4 py-1.5 text-sm font-medium text-brand-deep"
               >
                 Contact
-              </a>
+              </Link>
             </li>
           </ul>
 
@@ -64,9 +66,9 @@ export default function Nav() {
         className="fixed inset-0 z-60 bg-ink/95 backdrop-blur-xl md:hidden"
       >
         <ul className="flex h-full flex-col items-center justify-center gap-7">
-          {[...nav, { label: "Contact", href: "#contact" }].map((item) => (
+          {[...nav, { label: "Contact", href: "/#contact" }].map((item) => (
             <li key={item.href}>
-              {item.href.includes("#") ? (
+              {item.href.includes("#") && onHome ? (
                 <a
                   href={item.href}
                   onClick={() => setOpen(false)}
@@ -91,12 +93,21 @@ export default function Nav() {
   );
 }
 
-function NavLink({ label, href }: { label: string; href: string }) {
+function NavLink({
+  label,
+  href,
+  onHome,
+}: {
+  label: string;
+  href: string;
+  onHome: boolean;
+}) {
   const cls = "text-sm text-paper-2/75";
-  // Hash links are handled by SmoothScroll, so they stay plain anchors.
+  // On the home page hash links are handled by SmoothScroll (plain anchors);
+  // elsewhere they must be client-side navigations, not full reloads.
   return (
     <li>
-      {href.includes("#") ? (
+      {href.includes("#") && onHome ? (
         <a href={href} className={cls}>
           {label}
         </a>
