@@ -11,7 +11,7 @@ export const company = {
   hq: "Financial District, Hyderabad, India",
   address: "AI Linc, Financial District, Hyderabad, Telangana 500032",
   phone: "+91 96939 41136",
-  tech: { site: "ailinc.com", emails: ["shubham@ailinc.com", "sandeep@ailinc.com"] },
+  tech: { site: "ailinc.com", emails: ["shubham@ailinc.com", "sandeep@ailinc.com", "sai@ailinc.com", "raja@ailinc.com"] },
 };
 
 export const heroCopy = {
@@ -917,6 +917,38 @@ export const advisors = [
     achievements: [
       "Founded Luvetha Tech Solutions Pvt. Ltd.",
       "Siddhartha Institute of Engineering graduate",
+    ],
+  },
+  {
+    name: "Gouravaram Rajasekhar",
+    title: "Business Development Head",
+    experience: "",
+    photo: "/team/Gouravaram Rajasekhar.png",
+    specialization: "Strategic Business Development | Geopolitical Research | Corporate Strategy",
+    rating: null,
+    location: "Hyderabad, India",
+    linkedin: "https://www.linkedin.com/in/gouravaram-rajasekhar-347a9946",
+    achievements: [
+      "Co-Founder & Editor-in-Chief, Great Game India — a geopolitical magazine",
+      "Director, Anusandhaan Strategic Research Foundation",
+      "Ex-Political Consultant, I-PAC (Indian Political Action Committee)",
+      "Manipal University alumnus",
+    ],
+  },
+  {
+    name: "P. Sai Kumar Reddy",
+    title: "Business Development Advisor",
+    experience: "10+ years",
+    photo: "/team/Mr.P Saikumar Reddy.webp",
+    specialization: "Business Development | Power Systems | Electrical & Civil Projects",
+    rating: null,
+    location: "Middle East",
+    linkedin: "https://www.linkedin.com/in/puligoru-sai-kumar-reddy-90149b5a/",
+    achievements: [
+      "Ex-Regional Sales Manager, Statron Middle East (AC & DC backup power systems)",
+      "Handled Oil & Gas and Utility clients like ADNOC, KOC, Saudi Aramco, Shell, DEWA",
+      "Commissioned backup & battery monitoring systems for Ferrari World and Dubai Mall",
+      "Founded an electrical contracting company in 2019 (Ajman & Fujairah municipalities)",
     ],
   },
 ];

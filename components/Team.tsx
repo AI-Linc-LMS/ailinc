@@ -74,7 +74,7 @@ export default function Team() {
             <Words text="Advisors guiding our strategy and growth" italic={["growth"]} />
           </h2>
 
-          <div className="mt-14 grid grid-cols-1 items-stretch gap-5 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="mt-14 grid grid-cols-1 items-stretch gap-5 sm:grid-cols-2 lg:grid-cols-3">
             {advisors.map((t, i) => (
               <Reveal key={t.name} delay={(i % 6) * 0.08} className="h-full">
                 <Tilt strength={3} className="h-full">
@@ -120,9 +120,11 @@ export default function Team() {
                     </p>
 
                     <div className="mt-3 flex flex-wrap items-center gap-1.5 sm:gap-2">
-                      <span className="rounded-full bg-brand/8 px-2 py-1 eyebrow text-brand ring-1 ring-brand/15 sm:px-2.5">
-                        {t.experience}
-                      </span>
+                      {t.experience && (
+                        <span className="rounded-full bg-brand/8 px-2 py-1 eyebrow text-brand ring-1 ring-brand/15 sm:px-2.5">
+                          {t.experience}
+                        </span>
+                      )}
                       {t.location && (
                         <span className="rounded-full bg-ink/5 px-2 py-1 eyebrow text-brand-deep/55 ring-1 ring-brand-deep/10 sm:px-2.5">
                           {t.location}
@@ -132,17 +134,21 @@ export default function Team() {
 
                     {/* flex-1 absorbs the row's spare height so the CTA below
                         lands on the same line across every card */}
-                    <ul className="mt-4 flex-1 space-y-2 border-t border-brand-deep/10 pt-4 text-[13px] leading-relaxed text-brand-deep/65 sm:mt-5">
-                      {t.achievements.map((a) => (
-                        <li key={a} className="flex gap-2.5">
-                          <span
-                            className="mt-[7px] size-1.5 shrink-0 rounded-full"
-                            style={{ background: "var(--brand-grad)" }}
-                          />
-                          <span>{a}</span>
-                        </li>
-                      ))}
-                    </ul>
+                    {t.achievements.length > 0 ? (
+                      <ul className="mt-4 flex-1 space-y-2 border-t border-brand-deep/10 pt-4 text-[13px] leading-relaxed text-brand-deep/65 sm:mt-5">
+                        {t.achievements.map((a) => (
+                          <li key={a} className="flex gap-2.5">
+                            <span
+                              className="mt-[7px] size-1.5 shrink-0 rounded-full"
+                              style={{ background: "var(--brand-grad)" }}
+                            />
+                            <span>{a}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    ) : (
+                      <div className="flex-1" />
+                    )}
 
                     <a
                       href={t.linkedin}
@@ -217,9 +223,11 @@ export default function Team() {
                     </p>
 
                     <div className="mt-3 flex flex-wrap items-center gap-1.5 sm:gap-2">
-                      <span className="rounded-full bg-brand/8 px-2 py-1 eyebrow text-brand ring-1 ring-brand/15 sm:px-2.5">
-                        {t.experience}
-                      </span>
+                      {t.experience && (
+                        <span className="rounded-full bg-brand/8 px-2 py-1 eyebrow text-brand ring-1 ring-brand/15 sm:px-2.5">
+                          {t.experience}
+                        </span>
+                      )}
                       {t.location && (
                         <span className="rounded-full bg-ink/5 px-2 py-1 eyebrow text-brand-deep/55 ring-1 ring-brand-deep/10 sm:px-2.5">
                           {t.location}
@@ -229,17 +237,21 @@ export default function Team() {
 
                     {/* flex-1 absorbs the row's spare height so the CTA below
                         lands on the same line across every card */}
-                    <ul className="mt-4 flex-1 space-y-2 border-t border-brand-deep/10 pt-4 text-[13px] leading-relaxed text-brand-deep/65 sm:mt-5">
-                      {t.achievements.map((a) => (
-                        <li key={a} className="flex gap-2.5">
-                          <span
-                            className="mt-[7px] size-1.5 shrink-0 rounded-full"
-                            style={{ background: "var(--brand-grad)" }}
-                          />
-                          <span>{a}</span>
-                        </li>
-                      ))}
-                    </ul>
+                    {t.achievements.length > 0 ? (
+                      <ul className="mt-4 flex-1 space-y-2 border-t border-brand-deep/10 pt-4 text-[13px] leading-relaxed text-brand-deep/65 sm:mt-5">
+                        {t.achievements.map((a) => (
+                          <li key={a} className="flex gap-2.5">
+                            <span
+                              className="mt-[7px] size-1.5 shrink-0 rounded-full"
+                              style={{ background: "var(--brand-grad)" }}
+                            />
+                            <span>{a}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    ) : (
+                      <div className="flex-1" />
+                    )}
 
                     <a
                       href={t.linkedin}
