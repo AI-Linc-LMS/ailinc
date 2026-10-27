@@ -808,21 +808,6 @@ export const trainers = [
     ],
   },
   {
-    name: "Ganesh Rayala",
-    title: "Tech Entrepreneur",
-    experience: "15+ years",
-    photo: "/team/ganesh_rayala.jpg",
-    specialization: "Technology Solutions & Business Strategy",
-    rating: null,
-    location: "Hyderabad, India",
-    linkedin:
-      "https://www.linkedin.com/in/ganesh-rayala-4ab96a7?utm_source=share_via&utm_content=profile&utm_medium=member_android",
-    achievements: [
-      "Founded Luvetha Tech Solutions Pvt. Ltd.",
-      "Siddhartha Institute of Engineering graduate",
-    ],
-  },
-  {
     name: "Dr. Sanjay Kulkarni",
     title: "Data & AI Transformation Leader",
     experience: "25+ years",
@@ -902,21 +887,6 @@ export const advisors = [
     achievements: [
       "Empowering student startups & entrepreneurship ecosystem",
       "Strategic advisor at Lords Institute of Engineering",
-    ],
-  },
-  {
-    name: "Ganesh Rayala",
-    title: "Tech Entrepreneur",
-    experience: "15+ years",
-    photo: "/team/ganesh_rayala.jpg",
-    specialization: "Technology Solutions & Business Strategy",
-    rating: null,
-    location: "Hyderabad, India",
-    linkedin:
-      "https://www.linkedin.com/in/ganesh-rayala-4ab96a7?utm_source=share_via&utm_content=profile&utm_medium=member_android",
-    achievements: [
-      "Founded Luvetha Tech Solutions Pvt. Ltd.",
-      "Siddhartha Institute of Engineering graduate",
     ],
   },
   {
